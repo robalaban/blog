@@ -1,3 +1,6 @@
+# nix specific
+.direnv/
+
 # build output
 dist/
 
