@@ -1,0 +1,36 @@
+# editorconfig for node projects, with astro-specific overrides
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.astro]
+indent_style = tab
+indent_size = 1
+
+[*.astro.json]
+indent_style = space
+indent_size = 2
+
+[*.astro.md]
+trim_trailing_whitespace = false
+
+[*.astro.md.json]
+indent_style = space
+indent_size = 2
+
+[*.astro.md.js]
+indent_style = space
+indent_size = 2
+
+[*.astro.md.ts]
+indent_style = space
+indent_size = 2
