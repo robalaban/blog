@@ -8,6 +8,7 @@ specifiers:
   '@fontsource/inter': ^4.5.15
   '@fontsource/syne': ^4.5.13
   '@fontsource/twinkle-star': ^4.5.9
+  '@heroicons/react': ^2.0.17
   '@markdoc/markdoc': ^0.2.2
   '@tailwindcss/typography': ^0.5.9
   '@types/react': ^18.0.10
@@ -31,6 +32,7 @@ dependencies:
   '@fontsource/inter': 4.5.15
   '@fontsource/syne': 4.5.13
   '@fontsource/twinkle-star': 4.5.9
+  '@heroicons/react': 2.0.17_react@18.2.0
   '@markdoc/markdoc': 0.2.2_aoxwbmlfj6hwnimj5m3kry62qm
   '@types/react': 18.0.34
   '@types/react-dom': 18.0.11
@@ -858,6 +860,14 @@ packages:
 
   /@fontsource/twinkle-star/4.5.9:
     resolution: {integrity: sha512-41Z1cV7Dp505+/ceDMMSRRbeaSdkXYJyKGJzkUAu0lJWkUZHShuxzjHPa1Pq8hEndvBoBtAtq6MVgaryZ2DTgA==}
+    dev: false
+
+  /@heroicons/react/2.0.17_react@18.2.0:
+    resolution: {integrity: sha512-90GMZktkA53YbNzHp6asVEDevUQCMtxWH+2UK2S8OpnLEu7qckTJPhNxNQG52xIR1WFTwFqtH6bt7a60ZNcLLA==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@iarna/toml/2.2.5:

@@ -1,9 +1,15 @@
 ---
+import { HomeIcon } from "@heroicons/react/20/solid";
 ---
 
-<header class="flex justify-end my-8 font-['Syne']">
+<header class="flex justify-start my-8 font-['Syne']">
 	<nav class="flex left-0 items-center space-x-8">
-		<a href="/" class="hover:text-gray-600 hover:line-through">Home</a>
+		<a href="/">
+			<HomeIcon
+				className="hover:text-gray-600 hover:cursor-pointer hover:line-through h-5 w-5"
+			/>
+		</a>
+
 		<a href="/blog" class="hover:text-gray-600 hover:line-through">Blog</a>
 		<a
 			href="https://github.com/robalaban"

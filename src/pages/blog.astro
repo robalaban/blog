@@ -18,7 +18,10 @@ const sortedPosts = posts
 ---
 
 <PageLayout>
-	<section slot="main" class="">
+	<section
+		slot="main"
+		class="text-base sm:text-md md:text-lg lg:text-xl leading-normal md:leading-relaxed lg:leading-loose"
+	>
 		<ul>
 			{
 				sortedPosts.map((post) => {
