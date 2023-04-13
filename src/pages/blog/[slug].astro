@@ -1,0 +1,40 @@
+---
+import { readOne, readAll } from "../../lib/markdoc/read";
+import { blog } from "../../lib/markdoc/frontmatter.schema";
+import Renderer from "../../components/Renderer.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+	const posts = await readAll({
+		directory: "blog",
+		frontmatterSchema: blog,
+	});
+
+	// we don't want to generate pages for posts that link to external websites
+	const filteredPosts = posts
+		.filter((p) => p.frontmatter.draft !== true)
+		.filter(({ frontmatter }) => !frontmatter.external);
+
+	return filteredPosts.map((post) => {
+		return { params: { slug: post.slug } };
+	});
+}
+
+const { slug } = Astro.params;
+if (typeof slug !== "string") {
+	throw Error(`slug should be string. Received: ${slug}`);
+}
+
+const { content, frontmatter } = await readOne({
+	directory: "blog",
+	slug,
+	frontmatterSchema: blog,
+});
+---
+
+<PageLayout>
+	<section class="prose sm:prose-md md:prose-lg lg:prose-xl" slot="main">
+		<h2 class="font-['Syne']">{frontmatter.title}</h2>
+		<Renderer content={content} />
+	</section>
+</PageLayout>

@@ -1,0 +1,28 @@
+---
+/*
+  This layout is used in
+  - pages/index.astro
+*/
+
+import "@fontsource/syne";
+import "@fontsource/inter";
+import Header from "../components/Header.astro";
+---
+
+<!DOCTYPE html>
+<html class="robertbalaban" lang="en">
+	<head>
+		<!-- Global Metadata -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="generator" content="Robert Balaban" />
+		<slot name="meta" />
+	</head>
+
+	<body class="min-h-screen max-w-4xl mx-auto px-6 sm:px-8">
+		<Header />
+		<main id="main">
+			<slot name="main" />
+		</main>
+	</body>
+</html>

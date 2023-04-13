@@ -7,23 +7,24 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            maxWidth: '100ch',
             color: theme("colors.grey.800"),
             a: {
-              color: theme("colors.pink.500"),
+              color: theme("colors.grey.600"),
               "text-decoration": "none",
               "&:hover, &.active": {
-                color: "white",
-                "background-color": theme("colors.pink.500"),
-                strong: {
-                  color: "white",
-                },
+                color: theme("colors.grey.600"),
+                "text-decoration": "line-through",
               },
             },
             strong: {
-              color: theme("colors.pink.500"),
+              color: theme("colors.black"),
             },
             h1: {
               color: theme("colors.grey.800"),

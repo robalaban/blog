@@ -1,0 +1,1 @@
+**Hi there!** I’m Robert, a software engineer. My primary focus is in the data field ( stream processing, big data, warehousing etc. ). I write about some of that process on my [blog](/blog), as well as [tweet](https://twitter.com/robalaban) about it.
