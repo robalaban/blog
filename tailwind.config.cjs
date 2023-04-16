@@ -49,7 +49,7 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            minWidth: "screen",
+            maxWidth: "100%",
             a: {
               "text-decoration": "none",
               "background-repeat": "no-repeat",
