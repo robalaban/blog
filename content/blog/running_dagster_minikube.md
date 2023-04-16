@@ -4,10 +4,7 @@ external: false
 excerpt: Quick walkthrough on getting up and running with Dagster locally on a Kubernetes cluster with Terraform
 date: 2022-02-24
 tags:
-    - note
     - kubernetes
-    - terraform
-    - dagster
     - tutorials
 ---
 
@@ -48,7 +45,7 @@ Create the following structure in any folder you want, to keep things simple, I 
 
 Alright, now that we got the structre out of the way and all the folders time to take a look at what is inside.
 
-**Providers.tf**
+#### Providers.tf
 
 Usually, I like to keep in here information about the different providers I am going to use, in our case kubernetes and helm:
 
@@ -79,7 +76,7 @@ Everything above should look fairl standard except maybe `config_context` in the
 
 Alright, now that we have the `provider.tf` all set up, we can quickly run: `terraform init` to initialize terraforms state backend and download any providers we will be using.
 
-**Chart.tf**
+#### Chart.tf
 
 I have a convention to name the file `chart.tf` if the resource is using a helm chart, in our case, to keep things simple we're using the official helm chart from dagster. More information can be found here [on their official website](https://docs.dagster.io/deployment/guides/kubernetes/deploying-with-helm)
 

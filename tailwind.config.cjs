@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: {
-    mode: "all",
-    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-  },
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
   theme: {
     fontSize: {
@@ -22,155 +19,114 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        heading: ["Syne", "sans-serif"],
+      },
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        primary: {
+          main: "rgb(var(--color-primary-main) / <alpha-value>)",
+        },
+        text: {
+          body: "rgb(var(--color-text-body) / <alpha-value>)",
+          bold: "rgb(var(--color-text-bold) / <alpha-value>)",
+          heading: "rgb(var(--color-text-heading) / <alpha-value>)",
+          muted: "rgb(var(--color-text-muted) / <alpha-value>)",
+          code: "rgb(var(--color-text-code) / <alpha-value>)",
+          link: "rgb(var(--color-text-link) / <alpha-value>)",
+          selection: "rgb(var(--color-text-selection) / <alpha-value>)",
+        },
+        bg: {
+          body: "rgb(var(--color-bg-body) / <alpha-value>)",
+          code: "rgb(var(--color-bg-code) / <alpha-value>)",
+          selection: "rgb(var(--color-bg-selection) / <alpha-value>)",
+        },
+        border: {
+          code: "rgb(var(--color-border-code) / <alpha-value>)",
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            maxWidth: '100ch',
-            color: theme("colors.grey.800"),
+            minWidth: "screen",
             a: {
-              color: theme("colors.grey.600"),
               "text-decoration": "none",
-              "&:hover, &.active": {
-                color: theme("colors.grey.600"),
-                "text-decoration": "line-through",
-              },
-            },
-            strong: {
-              color: theme("colors.black"),
-            },
-            h1: {
-              color: theme("colors.grey.800"),
-              "margin-top": "0",
-            },
-            h2: {
-              color: theme("colors.grey.800"),
-              "margin-top": "0",
-            },
-            h3: {
-              color: theme("colors.grey.800"),
-              "margin-top": "0",
-            },
-            h4: {
-              color: theme("colors.grey.800"),
-              "margin-top": "0",
-            },
-            code: {
-              color: theme("colors.gray.300"),
-              "background-color": theme("colors.gray.900"),
-              "border-radius": "0.375rem",
-              "&:before, &:after": {
-                display: "none",
+              "background-repeat": "no-repeat",
+              "background-size": "100% 1.5px",
+              "background-position": "0 100%",
+              color: "rgb(var(--color-text-link))",
+              "&:hover": {
+                color: "rgb(var(--color-text-link))",
               },
             },
             p: {
-              color: theme("colors.grey.800"),
-              "margin-top": "0",
-              "margin-bottom": "1em",
+              color: "rgb(var(--color-text-body))",
             },
-            img: {
-              "margin-top": "0",
-              "margin-bottom": "0",
-              "box-shadow": "0px 2px 4px -2px rgba(0, 0, 0, 30%)",
+            "h1, h2, h3, h4, h5, h6": {
+              color: "rgb(var(--color-text-heading))",
             },
-            "ul > li": {
-              "&::before": {
-                "background-color": theme("colors.grey.800"),
-                "font-weight": "bold",
-              },
+            "code::before": {
+              content: "none",
             },
-            "ol > li": {
-              "&::before": {
-                color: theme("colors.grey.800"),
-                "font-weight": "bold",
-              },
+            "code::after": {
+              content: "none",
+            },
+            blockquote: {
+              border: "none",
+              position: "relative",
+              width: "96%",
+              margin: "0 auto",
+              "font-size": "1.0625em",
+              "padding-top": "1.5rem",
+              "padding-bottom": "0.5rem",
+              "padding-left": "1.5rem",
+              "padding-right": "1.5rem",
+            },
+            "blockquote::before": {
+              "font-family": "Arial",
+              content: "'“'",
+              "font-size": "4em",
+              color: "rgb(var(--color-text-link))",
+              position: "absolute",
+              left: "-10px",
+              top: "-10px",
+            },
+            "blockquote::after": {
+              content: "",
+            },
+            "blockquote p:first-of-type::before": {
+              content: "",
+            },
+            "blockquote p:last-of-type::after": {
+              content: "",
             },
           },
         },
-        dark: {
+        sleek: {
           css: {
-            color: "white",
-            a: {
-              color: theme("colors.pink.500"),
-              "text-decoration": "none",
-              "&:hover, &.active": {
-                color: "white",
-                "background-color": theme("colors.pink.700"),
-              },
-            },
-            strong: {
-              color: theme("colors.pink.500"),
-            },
-            h1: {
-              color: "white",
-              "margin-top": "0",
-            },
-            h2: {
-              color: "white",
-              "margin-top": "0",
-            },
-            h3: {
-              color: "white",
-              "margin-top": "0",
-              a: {
-                "&:hover, &.active": {
-                  "text-decoration": "none",
-                  color: theme("colors.pink.500"),
-                },
-              },
-            },
-            h4: {
-              color: "white",
-              "margin-top": "0",
-            },
-            pre: {
-              "background-color": theme("colors.gray.900"),
-              code: {
-                color: theme("colors.grey.300"),
-                "background-color": theme("colors.gray.900"),
-              },
-            },
-            code: {
-              color: theme("colors.grey.300"),
-              "background-color": theme("colors.gray.900"),
-              "border-radius": "0.375rem",
-              "&:before, &:after": {
-                display: "none",
-              },
-            },
-            p: {
-              color: "white",
-              "margin-top": "0",
-              "margin-bottom": "1em",
-            },
-            img: {
-              "margin-top": "0",
-              "margin-bottom": "0",
-              "box-shadow":
-                "0px 2px 4px -2px rgba(255, 255, 255, 30%)",
-            },
-            "ul > li": {
-              "&::before": {
-                "background-color": "white",
-                "font-weight": "bold",
-              },
-            },
-            "ol > li": {
-              "&::before": {
-                color: "white",
-                "font-weight": "bold",
-              },
-            },
+            "--tw-prose-body": "rgb(var(--color-text-body))",
+            "--tw-prose-headings": "rgb(var(--color-text-heading))",
+            "--tw-prose-lead": "rgb(var(--color-text-body))",
+            "--tw-prose-links": "rgb(var(--color-text-body))",
+            "--tw-prose-bold": "rgb(var(--color-text-body))",
+            "--tw-prose-strong": "rgb(var(--color-text-body))",
+            "--tw-prose-counters": "rgb(var(--color-text-body))",
+            "--tw-prose-bullets": "rgb(var(--color-text-body))",
+            "--tw-prose-hr": "rgb(var(--color-text-muted))",
+            "--tw-prose-quotes": "rgb(var(--color-text-body))",
+            "--tw-prose-quote-borders": "rgb(var(--color-primary-main))",
+            "--tw-prose-captions": "rgb(var(--color-primary-heading))",
+            "--tw-prose-quote-captions": "rgb(var(--color-primary-heading))",
+            "--tw-prose-code": "rgb(var(--color-text-code))",
+            "--tw-prose-pre-code": "rgb(var(--color-text-code))",
+            "--tw-prose-pre-bg": "rgb(var(--color-bg-code))",
+            "--tw-prose-th-borders": "rgb(var(--color-text-muted))",
+            "--tw-prose-td-borders": "rgb(var(--color-text-muted))",
           },
         },
       }),
     },
   },
   plugins: [require("@tailwindcss/typography")],
-  variants: {
-    extend: {
-      typography: ["dark"],
-    },
-  },
 }

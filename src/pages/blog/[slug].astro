@@ -33,8 +33,31 @@ const { content, frontmatter } = await readOne({
 ---
 
 <PageLayout>
-	<section class="prose sm:prose-md md:prose-lg lg:prose-xl" slot="main">
+	<section
+		class="prose sm:prose-md md:prose-lg lg:prose-xl dark:prose-invert"
+		slot="main"
+	>
 		<h2 class="font-['Syne']">{frontmatter.title}</h2>
+		<div class="flex justify-between">
+			<div>
+				{
+					frontmatter.date.toLocaleDateString("en-US", {
+						year: "numeric",
+						month: "long",
+						day: "numeric",
+					})
+				}
+			</div>
+			<div>
+				{
+					frontmatter.tags.map((tag: string) => (
+						<span class="mx-1 h-4 py-1 px-2 rounded-lg bg-slate-900 text-white dark:bg-slate-50 dark:text-slate-900">
+							{tag}
+						</span>
+					))
+				}
+			</div>
+		</div>
 		<Renderer content={content} />
 	</section>
 </PageLayout>

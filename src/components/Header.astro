@@ -1,12 +1,15 @@
 ---
 import { HomeIcon } from "@heroicons/react/20/solid";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header class="flex justify-start my-8 font-['Syne']">
-	<nav class="flex left-0 items-center space-x-8">
+<header class="flex justify-between my-8 font-['Syne'] items-center">
+	<nav
+		class="flex left-0 items-center space-x-8 text-base sm:text-md md:text-lg lg:text-xl leading-normal md:leading-relaxed lg:leading-loose"
+	>
 		<a href="/">
 			<HomeIcon
-				className="hover:text-gray-600 hover:cursor-pointer hover:line-through h-5 w-5"
+				className="hover:text-gray-600 hover:cursor-pointer hover:line-through h-7 w-7"
 			/>
 		</a>
 
@@ -24,4 +27,5 @@ import { HomeIcon } from "@heroicons/react/20/solid";
 			class="hover:text-gray-600 hover:line-through">LinkedIn</a
 		>
 	</nav>
+	<ThemeToggle />
 </header>

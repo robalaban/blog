@@ -1,1 +1,3 @@
-**Hi there!** I’m Robert, a software engineer. My primary focus is in the data field ( stream processing, big data, warehousing etc. ). I write about some of that process on my [blog](/blog), as well as [tweet](https://twitter.com/robalaban) about it.
+### Hello, I'm Rob.
+
+Software engineer with a focus on data engineering and machine learning. Welcome to my [blog](/blog) where I aim to share some of my thoughts with the world, transitive thoughts can be found on [twitter](https://twitter.com/robalaban).

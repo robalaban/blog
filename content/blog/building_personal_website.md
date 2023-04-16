@@ -4,9 +4,8 @@ external: false
 excerpt: Detailed view on building a modern, statically generated website with 11ty, Webpack deployed to Github Pages with the help of Github Actions
 date: 2021-01-19
 tags:
-    - note
+    - show and tell
     - javascript
-    - tutorials
 ---
 
 I've been putting off building a personal website for such a long time. I couldn't find a good enough reason to spend time creating one. Questions like the following kept coming up:
