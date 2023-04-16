@@ -1,35 +1,10 @@
 ---
-import { readOne, readAll } from "../../lib/markdoc/read";
-import { blog } from "../../lib/markdoc/frontmatter.schema";
+import { getEntryBySlug } from "astro:content";
 import Renderer from "../../components/Renderer.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
 
-export async function getStaticPaths() {
-	const posts = await readAll({
-		directory: "blog",
-		frontmatterSchema: blog,
-	});
-
-	// we don't want to generate pages for posts that link to external websites
-	const filteredPosts = posts
-		.filter((p) => p.frontmatter.draft !== true)
-		.filter(({ frontmatter }) => !frontmatter.external);
-
-	return filteredPosts.map((post) => {
-		return { params: { slug: post.slug } };
-	});
-}
-
-const { slug } = Astro.params;
-if (typeof slug !== "string") {
-	throw Error(`slug should be string. Received: ${slug}`);
-}
-
-const { content, frontmatter } = await readOne({
-	directory: "blog",
-	slug,
-	frontmatterSchema: blog,
-});
+const entry = await getEntryBySlug("blog", Astro.params.slug);
+const { Content } = await entry.render();
 ---
 
 <PageLayout>
@@ -37,11 +12,11 @@ const { content, frontmatter } = await readOne({
 		class="prose sm:prose-md md:prose-lg lg:prose-xl dark:prose-invert"
 		slot="main"
 	>
-		<h2 class="font-['Syne']">{frontmatter.title}</h2>
+		<h2 class="font-['Syne']">{entry.data.title}</h2>
 		<div class="flex justify-between">
 			<div>
 				{
-					frontmatter.date.toLocaleDateString("en-US", {
+					entry.data.date.toLocaleDateString("en-US", {
 						year: "numeric",
 						month: "long",
 						day: "numeric",
@@ -50,7 +25,7 @@ const { content, frontmatter } = await readOne({
 			</div>
 			<div>
 				{
-					frontmatter.tags.map((tag: string) => (
+					entry.data.tags.map((tag: string) => (
 						<span class="mx-1 h-4 py-1 px-2 rounded-lg bg-slate-900 text-white dark:bg-slate-50 dark:text-slate-900">
 							{tag}
 						</span>
@@ -58,6 +33,6 @@ const { content, frontmatter } = await readOne({
 				}
 			</div>
 		</div>
-		<Renderer content={content} />
+		<Content />
 	</section>
 </PageLayout>

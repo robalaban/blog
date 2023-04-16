@@ -1,5 +1,6 @@
 ---
 title: Setting up Dagster on Minikube with Terraform
+slug: running-dagster-minikube
 external: false
 excerpt: Quick walkthrough on getting up and running with Dagster locally on a Kubernetes cluster with Terraform
 date: 2022-02-24

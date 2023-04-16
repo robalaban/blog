@@ -1,5 +1,6 @@
 ---
 title: Building my personal website
+slug: building-personal-website
 external: false
 excerpt: Detailed view on building a modern, statically generated website with 11ty, Webpack deployed to Github Pages with the help of Github Actions
 date: 2021-01-19
