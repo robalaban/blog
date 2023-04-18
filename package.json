@@ -20,6 +20,7 @@
     "@fontsource/inter": "^4.5.15",
     "@fontsource/syne": "^4.5.13",
     "@fontsource/twinkle-star": "^4.5.9",
+    "@heroicons/react": "^2.0.17",
     "@markdoc/markdoc": "^0.2.2",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",

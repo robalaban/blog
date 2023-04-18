@@ -1,6 +1,9 @@
 ---
-// Component Imports
-import Intro from "../content/intro.md";
+import {
+	ArrowTopRightOnSquareIcon,
+	CircleStackIcon,
+	CodeBracketSquareIcon,
+} from "@heroicons/react/20/solid";
 import PageLayout from "../layouts/PageLayout.astro";
 
 // Full Astro Component Syntax:
@@ -10,7 +13,14 @@ import PageLayout from "../layouts/PageLayout.astro";
 <PageLayout>
 	<Fragment slot="main">
 		<section class="prose sm:prose-md md:prose-lg lg:prose-xl dark:prose-invert">
-			<Intro />
+			<h3>Hello, I'm Rob.</h3>
+
+			<p>
+				Software engineer with a focus on data engineering and machine learning.
+				Welcome to my <a href="/blog">blog</a> where I aim to share some of my thoughts
+				with the world, transitive thoughts can be found on
+				<a href="https://twitter.com/robalaban" target="_blank">twitter</a>.
+			</p>
 		</section>
 
 		<section
@@ -20,16 +30,16 @@ import PageLayout from "../layouts/PageLayout.astro";
 				class="flex-1 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
 			>
 				<div class="relative">
-					<!-- <CodeBracketSquareIcon
+					<CodeBracketSquareIcon
 						className="hover:text-gray-600 h-8 w-8 absolute top-full left-full transform -translate-x-6 -translate-y-6 opacity-20 dark:opacity-8"
-					/> -->
+					/>
 					<h5>Nix system level config for MacOS ( Apple silicon )</h5>
 					<a
 						href="https://github.com/robalaban/config"
 						class="inline-flex items-center"
 					>
 						View on Github
-						<!-- <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 fill-current" /> -->
+						<ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 fill-current" />
 					</a>
 				</div>
 			</div>
@@ -38,16 +48,16 @@ import PageLayout from "../layouts/PageLayout.astro";
 				class="flex-1 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
 			>
 				<div class="relative">
-					<!-- <CircleStackIcon
+					<CircleStackIcon
 						className="hover:text-gray-600 h-8 w-8 absolute top-full left-full transform -translate-x-6 -translate-y-6 opacity-20 dark:opacity-10"
-					/> -->
+					/>
 					<h5>Romanian Baccalaureate 2019-2022 dataset</h5>
 					<a
 						href="https://www.kaggle.com/datasets/robalaban/romanian-baccalaureate-2020"
 						class="inline-flex items-center"
 					>
 						View on Kaggle
-						<!-- <ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 fill-current" /> -->
+						<ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 fill-current" />
 					</a>
 				</div>
 			</div>
