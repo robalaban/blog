@@ -13,14 +13,16 @@ import PageLayout from "../layouts/PageLayout.astro";
 <PageLayout>
 	<Fragment slot="main">
 		<section class="prose sm:prose-md md:prose-lg lg:prose-xl dark:prose-invert">
-			<h3>Hello, I'm Rob.</h3>
+			<h2>Hello, I'm Rob.</h2>
 
 			<p>
-				Software engineer with a focus on data engineering and machine learning.
-				Welcome to my <a href="/blog">blog</a> where I aim to share some of my thoughts
-				with the world, transitive thoughts can be found on
+				Software engineer with a focus on data engineering. Passionate about DX, ML
+				and AI. Welcome to my <a href="/blog">blog</a> where I aim to share some of my
+				thoughts with the world, transitive thoughts can be found on
 				<a href="https://twitter.com/robalaban" target="_blank">twitter</a>.
 			</p>
+
+			<h3>Recent projects:</h3>
 		</section>
 
 		<section
@@ -33,10 +35,30 @@ import PageLayout from "../layouts/PageLayout.astro";
 					<CodeBracketSquareIcon
 						className="hover:text-gray-600 h-8 w-8 absolute top-full left-full transform -translate-x-6 -translate-y-6 opacity-20 dark:opacity-8"
 					/>
+					<h5>Using LangChain to query Google Calendar events</h5>
+					<a
+						href="https://www.kaggle.com/code/robalaban/using-langchain-to-query-google-calendar-events"
+						class="inline-flex items-center"
+						target="_blank"
+					>
+						View on Kaggle
+						<ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 fill-current" />
+					</a>
+				</div>
+			</div>
+
+			<div
+				class="flex-1 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+			>
+				<div class="relative">
+					<CodeBracketSquareIcon
+						className="hover:text-gray-600 h-8 w-8 absolute top-full left-full transform -translate-x-6 -translate-y-6 opacity-20 dark:opacity-8"
+					/>
 					<h5>Nix system level config for MacOS ( Apple silicon )</h5>
 					<a
 						href="https://github.com/robalaban/config"
 						class="inline-flex items-center"
+						target="_blank"
 					>
 						View on Github
 						<ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 fill-current" />
@@ -55,6 +77,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 					<a
 						href="https://www.kaggle.com/datasets/robalaban/romanian-baccalaureate-2020"
 						class="inline-flex items-center"
+						target="_blank"
 					>
 						View on Kaggle
 						<ArrowTopRightOnSquareIcon className="h-5 w-5 ml-2 fill-current" />
