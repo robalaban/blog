@@ -1,0 +1,43 @@
+---
+import { PaintBrushIcon } from "@heroicons/react/20/solid";
+---
+
+<anchor-point-toggle class="flex">
+	<button
+		class="justify-self-end bg-neutral-200 dark:bg-neutral-700 ml-4 inline-flex h-6 w-11 items-center rounded-full"
+		id="mode-toggle"
+		role="button"
+		type="button"
+		tabindex="0"
+		aria-checked="false"
+		data-headlessui-state=""
+	>
+		<PaintBrushIcon className="h-5 w-5" />
+	</button>
+</anchor-point-toggle>
+
+<script>
+	import { AnchorPoint } from "../lib/anchorPoint";
+
+	class AnchorPointToggle extends HTMLElement {
+		private anchorPoint: AnchorPoint;
+		constructor() {
+			super();
+			this.anchorPoint = new AnchorPoint();
+
+			const toggle = this.querySelector("button");
+
+			toggle?.addEventListener("click", () => {
+				console.log("AWSD");
+				if (toggle.getAttribute("aria-checked") === "true") {
+					toggle.setAttribute("aria-checked", "false");
+					this.anchorPoint.modifyText();
+				} else {
+					toggle.setAttribute("aria-checked", "true");
+					this.anchorPoint.revertText();
+				}
+			});
+		}
+	}
+	customElements.define("anchor-point-toggle", AnchorPointToggle);
+</script>
