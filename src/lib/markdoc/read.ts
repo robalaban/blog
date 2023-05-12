@@ -2,7 +2,6 @@ import type { z } from "zod";
 import path from "path";
 import matter from "gray-matter";
 import fs from "fs/promises";
-import { globby } from "globby";
 import Markdoc from "@markdoc/markdoc";
 import { config } from "./markdoc.config";
 
